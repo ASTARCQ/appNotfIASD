@@ -1,0 +1,38 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>roldiaconisa</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title><ion-icon name="arrow-undo" [routerLink]="['/home']"></ion-icon>Diaconisa</ion-title>
+    <ion-buttons slot="end">
+      <!-- <ion-button routerLink="/registro-usu">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button> -->
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br><br>
+  <center>
+    <ion-text color="light">
+      <h1>Rol de Diaconisa</h1>
+    </ion-text>
+    <ion-card-content>
+    <ion-grid [fixed]="true">
+        <ion-row>
+          <ion-col class="col">Nombre Hermano</ion-col>
+          <ion-col class="col" >Fecha Inicio</ion-col>
+          <ion-col class="col">Fecha Fin</ion-col>
+        </ion-row>
+        <ion-row *ngFor="let diaconisa of listataDiaconisaConsulta ">
+          <ion-col class="col1">{{diaconisa.name}}</ion-col>
+          <ion-col class="col1">{{diaconisa.fechaInicio}}</ion-col>
+          <ion-col class="col1">{{diaconisa.fechaFinal}}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </center>
+</ion-content>

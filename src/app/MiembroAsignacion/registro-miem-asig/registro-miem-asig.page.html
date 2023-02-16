@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header>
+  <ion-toolbar no-border-top color="success">
+    <ion-segment>
+      <ion-segment-button>
+        Registro
+      </ion-segment-button>
+      <ion-segment-button>
+        Lista
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br><br>
+  <center>
+    <ion-text color="light">
+      <h1>Registro</h1>
+    </ion-text>
+    <br><br>
+    <ion-card-content>
+      <!-- <form [formGroup]="registroMiemAsignacion"        
+            (submit)="onSubmit(registroMiemAsignacion.value)"> -->
+      <form>
+        <ion-list>
+          <ion-item>
+            <ion-select
+              [compareWith]="compareWith"
+              required
+              placeholder="Seleccione Hermano"
+            > 
+              <ion-select-option *ngFor="let usuario of listausuarios" [value]="usuario.id">{{ usuario.name }}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      </form>
+    </ion-card-content>
+  </center>    
+</ion-content>

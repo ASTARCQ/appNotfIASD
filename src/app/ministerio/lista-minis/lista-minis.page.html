@@ -1,0 +1,45 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>listaMinis</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title><ion-icon name="arrow-undo" [routerLink]="['/home']"></ion-icon>Ministerio</ion-title>
+    <!-- <ion-buttons slot="end">
+      <ion-button routerLink="/registrar-minis">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-header>
+  <ion-toolbar no-border-top color="success">
+    <ion-segment>
+      <ion-segment-button (click)="crear()">
+        Registro
+      </ion-segment-button>
+      <ion-segment-button routerLink="/lista-minis">
+        Lista
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <center>
+    <ion-text color="light">
+      <h1>Lista de Ministerio</h1>
+    </ion-text>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let listMin of listaMinisterio"> 
+          <ion-label >{{listMin.nombreRol}}</ion-label>
+          <ion-button color="success" (click)="EliminarMinisterio(listMin.idministerio)">Eliminar</ion-button>
+          <ion-button color="success" (click)="edit(listMin.idministerio, true)">Edit</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </center>
+</ion-content>

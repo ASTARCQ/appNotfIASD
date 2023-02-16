@@ -1,0 +1,137 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-button (click)="logout()" color="danger">
+      <ion-icon icon="ion:log-out"  name="log-out" flip="horizontal"></ion-icon>
+      <small>logout</small>
+    </ion-button>
+  
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+
+<!-- <div *ngIf="prueba=='administrador'" > -->
+
+  <!-- <ion-item   
+  routerLink="/usuario"
+  detail="true"
+  >
+    <ion-icon  name="person-add" slot="start" color="primary"></ion-icon>
+    Usuario
+  </ion-item> -->
+
+<!-- </div> -->
+<!-- <div >
+
+</div> -->
+<ion-app>
+  <ion-menu contentId="main-content">
+    <ion-header>
+      
+      <!-- <ion-select
+        [compareWith]="compareWith"
+        placeholder="Roles"
+        
+        > 
+        <ion-select-option *ngFor="let rol of roles" >{{ rol.nombreRol }}</ion-select-option>
+      </ion-select> -->
+      <ion-item >
+  <ion-title slot="end">
+    {{roles[0].name}}
+  </ion-title>
+
+  <ion-select 
+  interface="popover" 
+  placeholder="Roles" 
+  
+  >
+    <ion-select-option *ngFor="let rol of roles" >{{rol.nombreRol}}
+
+    </ion-select-option>
+  </ion-select>
+</ion-item>
+
+      <!-- <ion-toolbar color="tertiary">
+        <ion-title class="titulo">{{rol}}</ion-title>
+        <ion-title class="titulo">{{perf}}</ion-title>
+      </ion-toolbar> -->
+    </ion-header>
+
+    <ion-content class="ion-padding">
+      <ion-item routerLink="/usuario" detail="true" *ngIf="rol=='administrador'">
+        <ion-icon  name="person-add" slot="start" color="primary"></ion-icon>
+        Usuario
+      </ion-item>
+
+      <ion-item routerLink="/lista-minis" detail="true" *ngIf="rol=='administrador'">
+        <ion-icon  name="person-add" slot="start" color="primary"></ion-icon>
+        Ministerio
+      </ion-item>
+
+      <ion-item routerLink="/listamiembro" detail="true" *ngIf="rol=='administrador'">
+        <ion-icon  name="person-add" slot="start" color="primary"></ion-icon>
+        Miembro
+      </ion-item>
+
+      <ion-item routerLink="/listaasiga" detail="true" *ngIf="rol=='administrador'">
+        <ion-icon  name="person-add" slot="start" color="primary"></ion-icon>
+        Asiganacion-Actividad
+      </ion-item>
+
+      <ion-item routerLink="/miembro-asigancion" detail="true" *ngIf="rol=='administrador'">
+        <ion-icon  name="person-add" slot="start" color="primary"></ion-icon>
+        Miembro-Asignacion
+      </ion-item>
+      
+      <ion-item routerLink="/login" detail="true">
+        <ion-icon  name="person-add" slot="start" color="primary"></ion-icon>
+        Logauth
+      </ion-item>
+      <ion-item detail="true">
+        <ion-icon  name="person-add" slot="start" color="primary"></ion-icon>
+        Ayuda
+      </ion-item>
+    </ion-content>
+  </ion-menu>
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>ProgIASD</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <!-- <ion-content class="ion-padding"> -->
+    <ion-content class="card-background-page">
+      <br>
+      <center>
+        <ion-card>
+          <img src="assets/img/diaconoAC1.jpg" [routerLink]="['/roldiacono']"/>
+          <div class="card-title">Rol de Diacono</div>
+          <!-- <div class="card-subtitle">41 Listings</div> -->
+        </ion-card>
+        <br>
+        <ion-card>
+          <img src="assets/img/diaconisaAC1.jpg" [routerLink]="['/roldiaconisa']"/>
+          <div class="card-title">Rol de Diaconisa</div>
+          <!-- <div class="card-subtitle">64 Listings</div> -->
+        </ion-card>
+        <br>
+        <ion-card>
+          <img src="assets/img/predicadorAC1.jpg" [routerLink]="['/rolpredicador']"/>
+          <div class="card-title">Rol de Predicadores</div>
+          <!-- <div class="card-subtitle">28 Listings</div> -->
+        </ion-card>
+        <br>
+        <ion-card>
+          <img src="assets/img/limpiezaAC1.jpg" [routerLink]="['/rollimpieza']"/>
+          <div class="card-title">Rol de Limpiza</div>
+          <!-- <div class="card-subtitle">72 Listings</div> -->
+        </ion-card>
+        <br>
+      </center>
+    </ion-content>
+  </div>
+</ion-app>
+</ion-content>

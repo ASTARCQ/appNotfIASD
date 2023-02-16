@@ -1,0 +1,122 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>miembroReg</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<!-- <ion-header>
+  <ion-toolbar color="primary">
+    <ion-title><ion-icon name="arrow-undo" [routerLink]="['/home']"></ion-icon>Registro Miembro</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header>
+  <ion-toolbar no-border-top color="success">
+    <ion-segment>
+      <ion-segment-button routerLink="/miembro-reg">
+        Registro
+      </ion-segment-button>
+      <ion-segment-button routerLink="/listamiembro">
+        Lista
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <br><br>
+  <center>
+    <ion-text color="light">
+      <h1>Registro de Miembro</h1>
+    </ion-text>
+    <br><br>
+    <ion-card-content>
+      <!-- (submit)="registroMiembross(registroMiembro)" -->
+      <form [formGroup]="registroMiembro"        
+            (submit)="onSubmit(registroMiembro.value)">
+        <ion-list>
+          <ion-item>
+            <ion-select
+              [compareWith]="compareWith"
+              required
+              placeholder="Seleccione Hermano"
+              formControlName="iduser"
+            > 
+              <ion-select-option *ngFor="let usuario of listausuarios" [value]="usuario.id">{{ usuario.name }}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+        <ion-item>
+          <ion-label position="floating">Iglesia</ion-label>
+          <ion-input required formControlName="iglesia" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label >Bautizado</ion-label>
+          <ion-list >
+            <ion-item >
+              <ion-item >
+                <label slot="start">SI</label>
+                <input 
+                required
+                  type="radio"
+                  value=1 formControlName="bautizo"
+                  >
+                </ion-item>  
+
+                <ion-item>
+                  <label slot="start">NO</label>
+                  <input 
+                  required
+                    type="radio"
+                    value=0 formControlName="bautizo"
+                    >
+                </ion-item>          
+                
+            </ion-item>
+          </ion-list>
+        </ion-item> 
+
+        <!-- <ion-item>
+          <ion-list>
+           
+
+              <ion-item>
+                <ion-label>SI</ion-label>
+                <ion-radio 
+                value=1
+                formControlName="bautizo"
+                slot="end" ></ion-radio>
+              </ion-item>
+          
+              <ion-item>
+                <ion-label>NO</ion-label>
+                <ion-radio slot="end" value=2 formControlName="bautizo"></ion-radio>
+              </ion-item>
+         
+          </ion-list>
+        </ion-item> -->
+
+        <!-- <ion-item>
+          <input 
+          type="radio"
+          value=2 formControlName="bautizo"
+          >
+     
+        </ion-item> -->
+        <br>
+        <ion-button 
+        type="submit" color="success"
+        [disabled]="registroMiembro.invalid">
+        Registrar
+        </ion-button>
+        <ion-button color="danger" (click)="activarModal.dismiss()">
+          Cancelar
+        </ion-button>
+      </form>
+    </ion-card-content>
+    <br>
+  </center>
+</ion-content>

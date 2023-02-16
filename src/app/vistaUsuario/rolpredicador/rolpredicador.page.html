@@ -1,0 +1,36 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>rolpredicador</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title><ion-icon name="arrow-undo" [routerLink]="['/home']"></ion-icon>Predicador</ion-title>
+    <!-- <ion-buttons slot="end">
+      <ion-button routerLink="/registro-usu">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br><br>
+  <center>
+    <ion-text color="light">
+      <h1>Rol de Predicadores</h1>
+    </ion-text>
+    <ion-card-content>
+    <ion-grid [fixed]="true">
+        <ion-row>
+          <ion-col class="col">Nombre Hermano</ion-col>
+          <ion-col class="col" >Fecha</ion-col>
+        </ion-row>
+        <ion-row *ngFor="let predicador of listaPredicadorConsulta ">
+          <ion-col class="col1">{{predicador.name}}</ion-col>
+          <ion-col class="col1">{{predicador.fechaInicio}}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </center>
+</ion-content>

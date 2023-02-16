@@ -1,0 +1,38 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>rollimpieza</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title><ion-icon name="arrow-undo" [routerLink]="['/home']"></ion-icon>Limpieza</ion-title>
+    <!-- <ion-buttons slot="end">
+      <ion-button routerLink="/registro-usu">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br><br>
+  <center>
+    <ion-text color="light">
+      <h1>Rol de Limpieza</h1>
+    </ion-text>
+    <ion-card-content>
+    <ion-grid [fixed]="true">
+        <ion-row>
+          <ion-col class="col">Nombre Hermano</ion-col>
+          <ion-col class="col" >Fecha Inicio</ion-col>
+          <ion-col class="col">Fecha Final</ion-col>
+        </ion-row>
+        <ion-row *ngFor="let limpieza of listaLimpiezaConsulta ">
+          <ion-col class="col1">{{limpieza.name}}</ion-col>
+          <ion-col class="col1">{{limpieza.fechaInicio}}</ion-col>
+          <ion-col class="col1">{{limpieza.fechaFinal}}</ion-col> 
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </center>
+</ion-content>

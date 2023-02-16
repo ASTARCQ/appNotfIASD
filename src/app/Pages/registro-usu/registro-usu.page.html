@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <ion-card-content>
+    <form 
+    [formGroup]="registroUsuario" 
+    (submit)="onSubmit(registroUsuario.value)"
+    >
+      <ion-item>
+        <ion-label position="floating">Nombre Completo</ion-label>
+
+        <ion-input 
+        required
+        formControlName="name" 
+        type="text" 
+        id="password">
+      </ion-input>
+  <!-- <app-input-validor-error
+  [control]="registroUsuario.controls.name"[controlName]="'nombre Usuario"
+  ></app-input-validor-error> -->
+
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input formControlName="email" type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input formControlName="password" type="password" id="password"
+        autocomplete="new-password"
+        required='{{estado}}'
+        ></ion-input>
+      </ion-item>
+      <br>
+      <ion-button 
+        color="success" 
+        type="submit"
+        [disabled]="registroUsuario.invalid">
+        Registrar
+      </ion-button>
+      <ion-button color="danger" (click)="activarModa.dismiss()">
+        Cancelar
+      </ion-button>
+    </form>
+  </ion-card-content>
+</ion-content>

@@ -1,0 +1,31 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<!-- <ion-content>
+
+</ion-content> -->
+<ion-content >
+  <div class="ion-text-center">
+    <img class="img1" src="assets/loginimage.svg">
+    <!-- <img class="img1" src="assets/img/ja.png"> -->
+  
+  </div>
+    <div class="container">
+      <div class="form ion-text-center">
+        <form [formGroup]="login" (submit)="onSubmit(login)">
+          <h2>Login </h2>
+          <ion-item lines='none'>
+            <ion-input formControlName="email" type="email" placeholder='Email'></ion-input>
+          </ion-item>
+      
+          <ion-item lines='none'>
+            <ion-input formControlName="password" type="password" placeholder='Password'></ion-input>
+          </ion-item>
+          <ion-button type="submit" expand='block' >Login</ion-button>
+        </form>
+      </div>
+    </div>
+</ion-content>

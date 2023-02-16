@@ -1,0 +1,42 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>listamiembro</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title><ion-icon name="arrow-undo" [routerLink]="['/home']"></ion-icon>Miembro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header>
+  <ion-toolbar no-border-top color="success">
+    <ion-segment>
+      <ion-segment-button (click)="crear()">
+        Registro
+      </ion-segment-button>
+      <ion-segment-button routerLink="/listamiembro">
+        Lista
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <center>
+    <ion-text color="light">
+      <h1>Lista de Miembros/Hermano</h1>
+    </ion-text>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let listMiem of listamiembro"> 
+          <ion-label >{{listMiem.name}}</ion-label>
+          <ion-label >{{listMiem.bautizo}}</ion-label>
+          <ion-label >{{listMiem.iglesia}}</ion-label>
+          <ion-button color="success" (click)="eliminarMiembro(listMiem.idmiembro)">Eliminar</ion-button>
+          <ion-button color="success" (click)="edit(listMiem.idmiembro, true)">Edit</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </center>
+</ion-content>

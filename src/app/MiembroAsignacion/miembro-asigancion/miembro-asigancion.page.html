@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title><ion-icon name="arrow-undo" [routerLink]="['/home']"></ion-icon>Miembro Asigancion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header>
+  <ion-toolbar no-border-top color="success">
+    <ion-segment>
+      <ion-segment-button (click)="crear()">
+        Registro
+      </ion-segment-button>
+      <ion-segment-button>
+        Lista
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <center>
+    <ion-text color="light">
+      <h1>Lista de Miembros/Asigancion</h1>
+    </ion-text>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let lisMiemAsig of listaMiembroAsignacion"> 
+          <ion-label >{{lisMiemAsig.idministerioasignacion}}</ion-label>
+          <ion-label >{{lisMiemAsig.name}}</ion-label>
+          <ion-label >{{lisMiemAsig.nombreRol}}</ion-label>
+          <ion-label >{{lisMiemAsig.fechaInicio}}</ion-label>
+          <ion-label >{{lisMiemAsig.fechaFinal}}</ion-label>
+          <ion-button color="success" (click)="eliminarAsiganacion(lisMiemAsig.idministerioasignacion)">Eliminar</ion-button>
+          <!-- <ion-button color="success" (click)="edit(listMiem.idmiembro, true)">Edit</ion-button> -->
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </center>
+</ion-content>

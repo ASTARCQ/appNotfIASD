@@ -1,0 +1,98 @@
+<!-- <ion-header>
+  <ion-toolbar color="primary">
+    <ion-title><ion-icon name="arrow-undo" [routerLink]="['/home']"></ion-icon>Asiganacion de Actividad</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header>
+  <ion-toolbar no-border-top color="success">
+    <ion-segment>
+      <ion-segment-button routerLink="/actividadasig">
+        Registro
+      </ion-segment-button>
+      <ion-segment-button routerLink="/listaasiga">
+        Lista
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <center>
+    <br>
+    <ion-text color="light">
+      <h1>Registro de Asiganacion/laboral de hermanos</h1>
+    </ion-text>
+    <br>
+    <ion-card-content>
+      <form [formGroup]="registrarasignacion" (submit)="onSubmit(registrarasignacion.value)">
+        <!-- <ion-list>
+          <ion-item>
+            <ion-select
+              [compareWith]="compareWith"
+              placeholder="Seleccione Ministerio"
+              (ionChange)="seleccionado($event)"
+            > 
+              <ion-select-option *ngFor="let food of listaMinisterios" [value]="food">{{ food.nombreRol }}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list> -->
+        <ion-list>
+          <ion-item>
+            <ion-select
+              required
+              [compareWith]="compareWith"
+              placeholder="Seleccione Ministerio"
+              formControlName="idministerio"
+            > 
+              <ion-select-option *ngFor="let asiganacion of listaMinisterios" [value]="asiganacion.idministerio">{{ asiganacion.nombreRol }}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+        <!-- <ion-list>
+          <ion-item>
+            <ion-select
+              [compareWith]="compareWith"
+              placeholder="Seleccione al Hermano"
+              (ionChange) ="seleccionMiembro($event)"
+            > 
+              <ion-select-option *ngFor="let miembro of listaMiembros " [value]="miembro" >{{ miembro.name }}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list> -->
+        <ion-list>
+          <ion-item>
+            <ion-select
+              [compareWith]="compareWith"
+              placeholder="Seleccione al Hermano"
+              formControlName="idmiembro"
+            > 
+              <ion-select-option *ngFor="let miembro of listaMiembros " [value]="miembro.idmiembro" >{{ miembro.name }}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+        <ion-item>
+          <ion-label position="floating">Fecha Inicio</ion-label>
+          <ion-input formControlName="fechaInicio" type="Date"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Fecha Final</ion-label>
+          <ion-input formControlName="fechaFinal" type="Date"></ion-input>
+          <!-- <ion-datetime formControlName="fechaFinal" displayFormat="YYYY MM DD" placeholder="Select Date"></ion-datetime> -->
+        </ion-item>
+        <br>
+        <ion-button [disabled]="registrarasignacion.invalid" type="submit" color="success">
+          Registrar
+        </ion-button>
+        <ion-button color="danger" (click)="activarModal.dismiss()">
+          Cancelar
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </center>
+</ion-content>

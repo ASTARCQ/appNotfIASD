@@ -1,0 +1,50 @@
+<!-- <ion-header>
+  <ion-toolbar color="primary">
+    <ion-title><ion-icon name="arrow-undo" [routerLink]="['/home']"></ion-icon>Registro Ministerio</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header>
+  <ion-toolbar no-border-top color="success">
+    <ion-segment>
+      <ion-segment-button routerLink="/registrar-minis">
+        Registro
+      </ion-segment-button>
+      <ion-segment-button routerLink="/lista-minis">
+        Lista
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <center>
+    <ion-text color="light">
+      <h2>Ingresar Datos de Ministerio</h2>
+    </ion-text>
+    <ion-card-content>
+      <form [formGroup]="registroMinisterios" 
+            (submit)="onSubmit(registroMinisterios.value)">
+        <ion-item>
+          <ion-label position="floating">Ministerio</ion-label>
+          <ion-input formControlName="nombreRol" type="text"></ion-input>
+        </ion-item>
+        <br>
+        <ion-button 
+          color="success"  
+          type="submit"
+          [disabled]="registroMinisterios.invalid">
+          REGISTRAR
+        </ion-button>
+        <ion-button color="danger" (click)="activarModal.dismiss()">
+          Cancelar
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </center>
+</ion-content>

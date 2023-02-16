@@ -1,0 +1,62 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>listaasiga</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title><ion-icon name="arrow-undo" [routerLink]="['/home']"></ion-icon>Lista Asiganacion de Actividad</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header>
+  <ion-toolbar no-border-top color="success">
+    <ion-segment>
+      <ion-segment-button (click)="crear()">
+        Registro
+      </ion-segment-button>
+      <ion-segment-button routerLink="/listaasiga">
+        Lista
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <ion-content>
+  <center>
+    <ion-text color="light">
+      <h1>Lista de Asiganacion</h1>
+    </ion-text>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let listAsig of listadoAsigancions"> 
+          <ion-label >{{listAsig.name}}</ion-label>
+          <ion-label >{{listAsig.nombreRol}}</ion-label>
+          <ion-label >{{listAsig.fechaInicio}}</ion-label>
+          <ion-label >{{listAsig.fechaFinal}}</ion-label>
+          <ion-button color="success" (click)="eliminarAsiganacion(listAsig.idministerioasignacion)">Eliminar</ion-button>
+          <ion-button color="success" (click)="edit(listAsig.idministerioasignacion, true)">Edit</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </center>
+</ion-content> -->
+<ion-content>
+  <center>
+    <ion-text color="light">
+      <h1>Lista de Asiganacion Prueba</h1>
+    </ion-text>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let listAsigPru of listaAsigPrueva"> 
+          <ion-label >{{listAsigPru.nombreRol}}</ion-label>
+          <ion-label >{{listAsigPru.name}}</ion-label>
+          <ion-label >{{listAsigPru.fechaInicio}}</ion-label>
+          <ion-label >{{listAsigPru.fechaFinal}}</ion-label>
+          <ion-button color="success" (click)="eliminarAsiganacionPrueba(listAsigPru.idasignacionrol)">Eliminar</ion-button>
+          <ion-button color="success" (click)="edit(listAsigPru.idasignacionrol, true)">Edit</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </center>
+</ion-content>
